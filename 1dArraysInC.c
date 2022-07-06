@@ -10,6 +10,8 @@ int main(){
 
     printf("How many numbers?\n");
     scanf("%d",&numberOfElements);
+    printf("Enter a number and press Enter.\n");
+
 
     parray = (int*)malloc(numberOfElements*sizeof(int));        //Typecast is necessary because malloc returns a pointer of void type.
     
