@@ -21,13 +21,13 @@ Print ten space-separated integers in a single line denoting the frequency of ea
 int main() {
     char *s;
     int counter, *numbers;
-    s = malloc(1024 * sizeof(char));
-    numbers = (int*) calloc (10, sizeof(int));
-    scanf("%[^\n]", s);    
-    s = realloc(s, strlen(s) + 1);
+    s = malloc(1024 * sizeof(char));                    //Allocated memory for the input string
+    numbers = (int*) calloc (10, sizeof(int));          //Allocated memory for array of numbers and initialized to zero.
+    scanf("%[^\n]", s);                                 //Scan until new line character is deteced.
+    s = realloc(s, strlen(s) + 1);                      //Reallocate the previously allocated memory.
 
     for (counter = 0; counter < strlen(s); counter++){
-        if ((*(s+counter)>47) && (*(s+counter)<58)){
+        if ((*(s+counter)>47) && (*(s+counter)<58)){       //Checks the digit and increments corresponding element in 'numbers' array.
             (*(numbers + (*(s+counter)-48)))++;
         }
 
